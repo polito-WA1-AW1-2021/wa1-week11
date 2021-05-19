@@ -1,0 +1,45 @@
+@server = http://localhost:3001
+
+# __List Courses__
+GET {{server}}/api/courses
+
+###
+
+# __Get a Course (By Code)__
+GET {{server}}/api/courses/02LSEOV
+
+###
+
+# __List Exams__
+GET {{server}}/api/exams
+
+###
+
+# __Add a New Exam__
+
+POST {{server}}/api/exams
+Content-Type: application/json
+
+{
+    "code": "01OTWOV",
+    "score": 30,
+    "date": "2021-05-04"
+}
+
+###
+
+# __Update an Exam__
+PUT {{server}}/api/exams/01OTWOV
+Content-Type: application/json
+
+{
+    "code": "01OTWOV",
+    "score": 28,
+    "date": "2021-05-04"
+}
+
+###
+
+# __Delete an Exam__
+
+DELETE {{server}}/api/exams/01OTWOV
