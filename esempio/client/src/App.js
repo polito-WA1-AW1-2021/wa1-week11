@@ -10,10 +10,10 @@ function ShoppingList() {
       const response = await fetch('/api/items');
       const items = await response.json();
       setList(items);
-      console.log(items);
       setUpdate(false);
     };
-    getItems();
+    if(update)
+      getItems();
   }, [update]);
 
   const addItem = async () => {
