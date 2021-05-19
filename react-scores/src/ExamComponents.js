@@ -48,7 +48,7 @@ function ExamRowData(props) {
   return <>
     <td>{props.examName}</td>
     <td>{props.exam.score}</td>
-    <td>{props.exam.date.format('DD MMM YYYY')}</td>
+    <td>{props.exam.date}</td>
   </>;
 }
 
@@ -56,7 +56,7 @@ function RowControls(props) {
   return <td>
     <Link to={{
       pathname: "/update",
-      state: { exam: props.exam, examDate: props.exam.date.format('YYYY-MM-DD') }
+      state: { exam: props.exam, examDate: props.exam.date }
     }}>{iconEdit}
   </Link> <span onClick={() => { props.deleteExam(props.exam.coursecode) }}>{iconDelete}</span>
   </td>
@@ -72,7 +72,7 @@ function ExamForm(props) {
   
   const handleSubmit = (event) => {
       event.preventDefault();
-      const exam = { coursecode: course, score: score, date: dayjs(date) };
+      const exam = { coursecode: course, score: score, date: date };
       
       // SOME VALIDATION, ADD MORE!!!
       let valid = true;

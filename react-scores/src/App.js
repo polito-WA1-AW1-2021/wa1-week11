@@ -3,15 +3,14 @@ import './App.css';
 import { Container, Row } from 'react-bootstrap';
 import {ExamScores, ExamForm} from './ExamComponents.js';
 import AppTitle from './AppTitle.js';
-import dayjs from 'dayjs';
 import { useState } from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
 const fakeExams = [
-  {coursecode: '01TYMOV', score: 28, date: dayjs('2021-03-01')},
-  {coursecode: '01SQJOV', score: 29, date: dayjs('2021-06-03')},
-  {coursecode: '04GSPOV', score: 18, date: dayjs('2021-05-24')},
-  {coursecode: '01TXYOV', score: 24, date: dayjs('2021-06-21')},
+  {coursecode: '01TYMOV', score: 28, date: '2021-03-01'},
+  {coursecode: '01SQJOV', score: 29, date: '2021-06-03'},
+  {coursecode: '04GSPOV', score: 18, date: '2021-05-24'},
+  {coursecode: '01TXYOV', score: 24, date: '2021-06-21'},
 ];
 
 const fakeCourses = [
